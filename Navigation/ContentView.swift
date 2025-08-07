@@ -13,13 +13,31 @@ struct ContentView: View {
             VStack{
                 Text("This is the root view 😋")
                     .font(.title)
-                NavigationLink("Click here!") {
-                    Text("You've arrived at the second view! 🎊")
+                NavigationLink(destination: SecondView()) {
+                    Text("Click Here!")
                         .font(.title)
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color.purple)
+                        .underline()
+                    
                 }
+                .padding()
+                Spacer()
+                NavigationLink("Extra Secret Page"){
+                    VStack{
+                        Image("i")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                        
+                        Text("Congrats!! You've reached the secret page!! 🥳🙌🏼😋")
+                            .font(.title)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    }
+                }
+                .padding()
             }
             .padding()
+            .navigationTitle(("Home"))
         }
     }
 }
